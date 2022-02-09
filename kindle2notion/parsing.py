@@ -130,14 +130,14 @@ def _parse_page_location_date_and_note(
         if "note" in element:
             isNote = True
         if "page" in element:
-            page = element[element.find("page") :].replace("page", "").strip()
+            page = element[element.find("Seite") :].replace("Seite", "").strip()
         if "location" in element:
             location = (
-                element[element.find("location") :].replace("location", "").strip()
+                element[element.find("Position") :].replace("Position", "").strip()
             )
         if "added on" in element:
             date = parse(
-                element[element.find("added on") :].replace("added on", "").strip()
+                element[element.find("Hinzugefügt am") :].replace("Hinzugefügt am", "").strip()
             )
             date = date.strftime("%A, %d %B %Y %I:%M:%S %p")
 
